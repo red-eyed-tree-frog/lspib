@@ -1,4 +1,11 @@
 #!/bin/sh
+
+# Assignment 2 native build (installed by assignment2-ready)
+set -eu
+cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+make clean
+make CROSS_COMPILE=
+# End Assignment 2 native build
 # Tester script for assignment 1 and assignment 2
 # Author: Siddhant Jajoo
 
@@ -54,7 +61,8 @@ fi
 
 for i in $( seq 1 $NUMFILES)
 do
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	mkdir -p "$WRITEDIR"
+	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
