@@ -3,8 +3,8 @@
 # Assignment 2 native build (installed by assignment2-ready)
 set -eu
 cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-make clean
-make CROSS_COMPILE=
+#make clean
+#make CROSS_COMPILE=
 # End Assignment 2 native build
 # Tester script for assignment 1 and assignment 2
 # Author: Siddhant Jajoo
