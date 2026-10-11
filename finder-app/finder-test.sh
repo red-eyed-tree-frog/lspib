@@ -1,11 +1,8 @@
 #!/bin/sh
 
-# Assignment 2 native build (installed by assignment2-ready)
+# Run from the script directory, on both host and target.
 set -eu
 cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-#make clean
-#make CROSS_COMPILE=
-# End Assignment 2 native build
 # Tester script for assignment 1 and assignment 2
 # Author: Siddhant Jajoo
 
@@ -39,7 +36,7 @@ echo "Writing ${NUMFILES} files containing string ${WRITESTR} to ${WRITEDIR}"
 rm -rf "${WRITEDIR}"
 
 # create $WRITEDIR if not assignment1
-assignment=`cat ../conf/assignment.txt`
+assignment=`cat conf/assignment.txt`
 
 if [ $assignment != 'assignment1' ]
 then
@@ -56,8 +53,7 @@ then
 	fi
 fi
 #echo "Removing the old writer utility and compiling as a native application"
-#make clean
-#make
+##make
 
 for i in $( seq 1 $NUMFILES)
 do
